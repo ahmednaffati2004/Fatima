@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@400;700&family=Tajawal:wght@400;700&display=swap');
+
 @font-face {
   font-family: 'Happy';
   src: url('../assets/fonts/Sweet-Toffee.ttf') format('truetype');
@@ -14,50 +16,6 @@ body {
 	-ms-transition:background-color linear 5s;
 	transition:background-color linear 5s;
 	overflow-x:hidden;
-}
-
-/* Overlay */
-.lightbox {
-  display: none; /* stays hidden at first */
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-
-  /* flex will only apply when shown via JS */
-  justify-content: center;
-  align-items: center;
-
-  z-index: 9999;
-}
-
-/* Enlarged image */
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-  animation: fadeIn 0.3s ease;
-}
-
-/* Simple fade-in */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.can-zoom {
-  display: none;   /* hidden until button click */
-  position: absolute;
-  right: 65px;     /* aligns with right album photos */
-  top: 360px;      /* sits below the second right photo */
-  width: 200px;
-  height: auto;
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
-}
-.can-zoom:hover {
-  opacity: 1;  /* brighten on hover */
 }
 
 .container {
@@ -169,8 +127,8 @@ body {
 	width: 50px;
 	height: 50px;
 	margin: auto;
-	background-repeat: no-repeat no-repeat;
-	background-position:center 0px;
+	background-repeat: no-repeat;
+	background-position: center 0;
 	background-size: 50px 50px;
 }
 
@@ -1046,16 +1004,13 @@ audio {
 		-webkit-transform:translate(0px,-1000px);
 	}
 	33%{
-		-webkit-transform:translate(0px,0px);
-		-webkit-transform:rotate(10deg);
-		/*-webkit-transform:scale(1.5);*/
+		-webkit-transform: translate(0px, 0px) rotate(10deg);
 	}
 	66% {
-		-webkit-transform:translate(0px,100px);
-		-webkit-transform:rotate(-10deg);
+		-webkit-transform: translate(0px, 100px) rotate(-10deg);
 	}
 	100% {
-		-webkit-transform:translate(0px,0px);
+		-webkit-transform: translate(0px, 0px);
 	}
 }
 @-moz-keyframes bannar_come {
@@ -1063,13 +1018,10 @@ audio {
 		-moz-transform:translate(0px,-1000px);
 	}
 	33%{
-		-moz-transform:translate(0px,0px);
-		-moz-transform:rotate(10deg);
-		/*-webkit-transform:scale(1.5);*/
+		-moz-transform: translate(0px, 0px) rotate(10deg);
 	}
 	66% {
-		-moz-transform:translate(0px,100px);
-		-moz-transform:rotate(-10deg);
+		-moz-transform: translate(0px, 100px) rotate(-10deg);
 	}
 	100% {
 		-moz-transform:translate(0px,0px);
@@ -1080,13 +1032,10 @@ audio {
 		-o-transform:translate(0px,-1000px);
 	}
 	33%{
-		-o-transform:translate(0px,0px);
-		-o-transform:rotate(10deg);
-		/*-webkit-transform:scale(1.5);*/
+		-o-transform: translate(0px, 0px) rotate(10deg);
 	}
 	66% {
-		-o-transform:translate(0px,100px);
-		-o-transform:rotate(-10deg);
+		-o-transform: translate(0px, 100px) rotate(-10deg);
 	}
 	100% {
 		-o-transform:translate(0px,0px);
@@ -1097,30 +1046,24 @@ audio {
 		-ms-transform:translate(0px,-1000px);
 	}
 	33%{
-		-ms-transform:translate(0px,0px);
-		-ms-transform:rotate(10deg);
-		/*-webkit-transform:scale(1.5);*/
+		-ms-transform: translate(0px, 0px) rotate(10deg);
 	}
 	66% {
-		-ms-transform:translate(0px,100px);
-		-ms-transform:rotate(-10deg);
+		-ms-transform: translate(0px, 100px) rotate(-10deg);
 	}
 	100% {
 		-ms-transform:translate(0px,0px);
 	}
-}o
+}
 @keyframes bannar_come {
 	0%{
 		transform:translate(0px,-1000px);
 	}
 	33%{
-		transform:translate(0px,0px);
-		transform:rotate(10deg);
-		/*-webkit-transform:scale(1.5);*/
+		transform: translate(0px, 0px) rotate(10deg);
 	}
 	66% {
-		transform:translate(0px,100px);
-		transform:rotate(-10deg);
+		transform: translate(0px, 100px) rotate(-10deg);
 	}
 	100% {
 		transform:translate(0px,0px);
@@ -1134,7 +1077,7 @@ audio {
 	z-index: 99;
 	width: 100px;
 	height: 183px;
-	background-repeat: no-repeat no-repeat;
+	background-repeat: no-repeat;
 	background-size: 100px 183px;
 }
 .balloons h2 {
@@ -1335,14 +1278,18 @@ audio {
 }
 
 .message p {
-  font-family: 'Happy', sans-serif;
-  font-size: 60px;
-  text-transform: uppercase;
+  font-family: 'Tajawal', 'Signika', sans-serif;
+  font-size: 42px;
+  text-transform: none;
+  direction: rtl;
+  unicode-bidi: plaintext;
   color: #B8366A;
   text-shadow: 2px 2px 2px #FFF, 0 0 20px rgba(255,182,193,0.5);
   display: none;              /* controlled by JS */
   font-weight: bold;
   margin: 15px 0;             /* spacing between lines */
+  line-height: 1.5;
+  word-wrap: break-word;
 }
 
 .btn-primary {
@@ -1356,22 +1303,40 @@ audio {
         box-shadow: 0 4px 15px rgba(212, 85, 122, 0.4);
         transition: all 0.3s ease;
 }
-    .btn-primary:hover,
-    .btn-primary:focus,
-    .btn-primary:active,
-    .btn-primary.active,
-    .open .dropdown-toggle.btn-primary {
-        border-color: #fff;
-        color: #fff;
-        background: linear-gradient(135deg, #F093B0 0%, #E879A9 50%, #D4557A 100%);
-        box-shadow: 0 6px 20px rgba(212, 85, 122, 0.6);
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    border-color: #fff;
+    color: #fff;
+    background: linear-gradient(135deg, #F093B0 0%, #E879A9 50%, #D4557A 100%);
+    box-shadow: 0 6px 20px rgba(212, 85, 122, 0.6);
+}
+
+.navbar-fixed-bottom {
+    background: transparent;
+    border: none;
+    padding-bottom: 15px;
+}
+
+.navbar-fixed-bottom .btn-primary {
+    margin: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .message {
+        top: 75%;
+        width: 95%;
     }
 
+    .message p {
+        font-size: 28px;
+        margin: 10px 0;
+    }
 
-
-    /*controlling tablet width*/
-    /*@media only screen and (max-width: 720px){
-    	.container {
-    		-webkit-transform: scale(0.9);
-    	}
-    }*/
+    .navbar-fixed-bottom .btn-primary {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
